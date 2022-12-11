@@ -13,7 +13,7 @@ let projectDir;
 if (projectName === undefined){
   console.log(chalk.red('Please enter correct folder name'));
   process.exit()
-}else if (fs.existsSync(projectDir)){
+} else if (fs.existsSync(projectDir)) {
   console.log(chalk.red('Project with that name already exists'));
   process.exit()
 } else {
@@ -690,5 +690,5 @@ function main() {
   createFileStructure(fileStructure);
 
   //automatically install all project dependencies
-  spawn.sync('npm', ['install', projectDir], {stdio: 'inherit'})
+  spawn.sync('npm', ['install'], {stdio: 'inherit'})
 }
