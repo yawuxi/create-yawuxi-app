@@ -7,18 +7,21 @@ import spawn from "cross-spawn";
 //common variables
 const currentDir = process.cwd();
 const projectName = process.argv[2];
-let projectDir;
 
 //general checks
 if (projectName === undefined){
   console.log(chalk.red('Please enter correct folder name'));
   process.exit()
-} else if (fs.existsSync(projectDir)) {
+} 
+
+let projectDir = path.resolve(currentDir, projectName);
+
+if (fs.existsSync(projectDir)) {
   console.log(chalk.red('Project with that name already exists'));
   process.exit()
 } else {
-  projectDir = path.resolve(currentDir, projectName);
   main()
+  console.clear()
   console.log(chalk.green('Successfully! Your new project is ready!'));
   console.log('Created',chalk.bold.yellow(projectName),'at',chalk.bold.yellow(projectDir));
   console.log('Enter -',chalk.bold.blue(`cd ${projectName},`), 'after -',chalk.bold.blue('npm start'));
@@ -690,8 +693,6 @@ function main() {
   createFileStructure(fileStructure);
 
   //automatically install all project dependencies
-  console.log('old directory: ',process.cwd());
   process.chdir(projectDir)
-  console.log('new directory: ',process.cwd());
   spawn.sync('npm', ['install'], {stdio: 'inherit'})
 }
