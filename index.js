@@ -2,11 +2,12 @@
 import path from "path";
 import * as fs from 'fs'
 import chalk from "chalk";
+import spawn from "cross-spawn";
 
 //common variables
 const currentDir = process.cwd();
-const projectName = process.argv[2]
-const projectDir = path.resolve(currentDir, projectName);
+const projectName = process.argv[2];
+let projectDir;
 
 //general checks
 if (projectName === undefined){
@@ -16,6 +17,7 @@ if (projectName === undefined){
   console.log(chalk.red('Project with that name already exists'));
   process.exit()
 } else {
+  projectDir = path.resolve(currentDir, projectName);
   main()
   console.log(chalk.green('Successfully! Your new project is ready!'));
   console.log('Created',chalk.bold.yellow(projectName),'at',chalk.bold.yellow(projectDir));
@@ -686,4 +688,7 @@ function main() {
 
   createFolderStructure(folderStructure);
   createFileStructure(fileStructure);
+
+  //automatically install all project dependencies
+  spawn.sync('npm', ['install', projectDir], {stdio: 'inherit'})
 }
