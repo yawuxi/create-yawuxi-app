@@ -1,0 +1,15 @@
+{
+  "name": "create-yawuxi-webpack",
+  "version": "2.0.5",
+  "description": "package which creates yawuxi`s webpack-build",
+  "bin": {
+    "create-yawuxi-webpack": "index.js"
+  },
+  "keywords": [
+    "webpack",
+    "yawuxi",
+    "react"
+  ],
+  "author": "Dmytro <ryliov.work@gmail.com>",
+  "license": "ISC"
+}
