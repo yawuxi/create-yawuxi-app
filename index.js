@@ -690,5 +690,8 @@ function main() {
   createFileStructure(fileStructure);
 
   //automatically install all project dependencies
+  console.log('old directory: ',process.cwd());
+  process.chdir(projectDir)
+  console.log('new directory: ',process.cwd());
   spawn.sync('npm', ['install'], {stdio: 'inherit'})
 }
