@@ -641,7 +641,7 @@ export { App };
   },
   {
     path: `${srcPath}/index.scss`,
-    data: `@import "scss/reset";
+    data: `@import "scss/css-reset";
     `
   },
   {
