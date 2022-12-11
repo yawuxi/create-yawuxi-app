@@ -1,6 +1,6 @@
 {
   "name": "create-yawuxi-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "package which deploy yawuxi`s webpack build",
   "bin": {
     "create-yawuxi-app": "index.js"
@@ -10,6 +10,10 @@
     "yawuxi",
     "react"
   ],
+  "type": "module",
   "author": "Dmytro <ryliov.work@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0"
+  }
 }
