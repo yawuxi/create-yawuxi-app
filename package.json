@@ -1,9 +1,9 @@
 {
-  "name": "create-yawuxi-webpack",
+  "name": "create-yawuxi-app",
   "version": "2.0.5",
-  "description": "package which creates yawuxi`s webpack-build",
+  "description": "package which deploy yawuxi`s webpack build",
   "bin": {
-    "create-yawuxi-webpack": "index.js"
+    "create-yawuxi-app": "index.js"
   },
   "keywords": [
     "webpack",
