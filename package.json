@@ -1,6 +1,6 @@
 {
   "name": "create-yawuxi-app",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "package which deploy yawuxi`s webpack build",
   "bin": {
     "create-yawuxi-app": "index.js"
